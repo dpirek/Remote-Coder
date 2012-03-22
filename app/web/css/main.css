@@ -1,0 +1,16 @@
+body { 
+	font-family: "Arial";
+	font-size: 12px; margin: 30px; background-color: #ccc;
+}
+
+h1 { 
+	margin: 0; 
+	padding: 0 0 10px 0;
+}
+
+.message { 
+	background-color: #FFFFE0; 
+	padding: 5px 10px; 
+	margin-bottom: 10px; 
+	border: 1px solid #E6DB55;
+}

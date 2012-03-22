@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+  <html> 
+    <head>  
+    	<title>Remote Coder</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<style>
+    		body {margin: 20px; background-color: #eee; font-family: "Arial";}
+    		textarea {width:100%; height:300px; margin-top:10px;}
+    		
+    		.third {width:33%;}
+    		.left {float:left}
+    	</style>
+    </head>
+  <body>
+  
+  <h1>Remote Coder</h1>
+  
+  <div class="third left">
+		<button id="saveBtn">update HTML</button>
+	  <textarea id="code"><p>foo bar</p></textarea>
+	</div>
+	
+	<div class="third left">
+		<button id="saveBtn2">update CSS</button>
+	  <textarea id="code2">body {background-color: #f00;}</textarea>
+	</div>
+	
+	<div class="third left">
+		<button id="saveBtn3">run remote script</button>
+	  <textarea id="code3">alert('hi');</textarea>
+	</div>
+	
+	<script src="/js/jquery.js"></script>
+	<script type="text/javascript">
+		(function($){
+			
+			var send = function(d){
+			
+				$.ajax({
+					url: 'json/code/update',
+					data: d,
+					type: 'post',
+					sucess: function(d){
+						console.log(d)
+					}
+				});
+			};
+			
+			$('#saveBtn').click(function(){
+				send({
+						type: 'html',
+						code: $('#code').val()
+					});
+				return false;
+			});
+			
+			$('#saveBtn2').click(function(){
+				send({
+						type: 'css',
+						code: $('#code2').val()
+					});
+				return false;
+			});
+			
+			$('#saveBtn3').click(function(){
+				send({
+						type: 'javascript',
+						code: $('#code3').val()
+					});
+				return false;
+			});
+			
+		}(jQuery));
+	</script>
+  </body>
+</html>

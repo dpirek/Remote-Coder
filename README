@@ -1,0 +1,14 @@
+ABOUT:
+This tool allows you to remotely update HTML, CSS, and JS of a page or app that is on another domain.
+
+SUPPORT:
+Only works in browsers supporting web sockets.
+
+SETUP:
+update paths of your of your app in the config.js file.
+update your server url in the app/web/js/init.js
+
+CONTACT:
+David Pirek
+dpirek@gmail.com
+http://www.davidpirek.com
